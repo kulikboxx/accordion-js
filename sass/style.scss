@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: black;
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  margin-top: 5rem;
+  font-size: 4.6rem;
+  text-align: center;
+}
+
+.accordions {
+  margin: 5rem auto 0;
+  max-width: 800px;
+  border-top: 5px solid black;
+
+  .accordion {
+    padding: 2rem 3rem;
+    border-bottom: 1px solid black;
+
+    &:first-of-type {
+      border-top: 1px solid black;
+    }
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      font-size: 2rem;
+      cursor: pointer;
+
+      &::after {
+        content: '+';
+        font-size: 3rem;
+        transition: transform 0.4s;
+      }
+
+      &.active::after {
+        transform: rotateZ(45deg);
+      }
+    }
+
+    &__content {
+      overflow: hidden;
+      transition: max-height 0.4s;
+    }
+
+    &__description {
+      padding-top: 1rem;
+      color: grey;
+      line-height: 1.7;
+    }
+  }
+}
